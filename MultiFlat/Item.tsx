@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Animated,
   Button,
   StatusBar,
   StyleSheet,
