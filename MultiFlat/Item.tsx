@@ -22,10 +22,14 @@ const Item = React.memo(
       <TouchableOpacity
         style={[
           styles.item,
-          {backgroundColor: item.select ? '#dddddd' : 'gray'},
+
+          {
+            backgroundColor: '#dddddd',
+            opacity: item.select ? 1 : 0.6,
+          },
         ]}
         onPress={onPress}>
-        <Text style={[styles.title, {flex: 1}]}>{item.title}1</Text>
+        <Text style={styles.title}>{item.title}</Text>
         <CheckBox
           style={{backgroundColor: 'purple'}}
           value={select}
@@ -54,42 +58,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-  checkmarkcontainer: {
-    height: 20,
-    width: 20,
-    borderWidth: 2,
-    backgroundColor: 'green',
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  checkmark: {
-    width: 22,
-    height: 22,
-  },
-
-  checkmark_stem: {
-    position: 'absolute',
-    width: 3,
-    height: 9,
-    backgroundColor: 'white',
-    left: 11,
-    top: 6,
-  },
-
-  checkmark_kick: {
-    position: 'absolute',
-    width: 3,
-    height: 3,
-    backgroundColor: 'white',
-    left: 8,
-    top: 12,
-  },
 
   title: {
     fontWeight: 'bold',
     fontSize: 24,
     color: 'black',
+    flex: 1,
   },
 });

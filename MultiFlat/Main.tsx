@@ -28,7 +28,7 @@ const Main = (props: MainProps) => {
     <>
       <Header />
       <FlatList
-        style={{flex: 0.8, backgroundColor: 'red'}}
+        style={{flex: 0.8, backgroundColor: '#606060'}}
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id}
