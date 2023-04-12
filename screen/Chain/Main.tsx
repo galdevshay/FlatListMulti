@@ -1,15 +1,20 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {FlatList, TextInput, View, TouchableOpacity, Text} from 'react-native';
 import Item from './Item';
-import {Chain, Datum} from './types';
+import {Datum} from './types';
 import Header from './Header';
 import Footer from './Footer';
 import {getData} from './Mock';
+import {useNavigation} from '@react-navigation/native';
+import Order from './order';
 export const ITEM_HEIGHT = 80;
 const Main = () => {
   const [data, setData] = useState<Datum[]>([]);
   const [filterData, setFilterData] = useState<Datum[]>([]);
   const [query, setQuery] = useState('');
+  const navigation = useNavigation();
+  const [sortName, setSortName] = useState(false);
+  const [sortPrice, setSortPrice] = useState(false);
   useEffect(() => {
     getData()
       .then(value => {
@@ -46,6 +51,25 @@ const Main = () => {
         return -1;
       }),
     );
+    setSortPrice(!sortPrice);
+  };
+  const sortNameUp = () => {
+    setFilterData(
+      data.sort((a, b) => {
+        if (a.name > b.name) return 1;
+        return -1;
+      }),
+    );
+    setSortName(!sortName);
+  };
+  const sortNameDown = () => {
+    setFilterData(
+      data.sort((a, b) => {
+        if (a.name > b.name) return 1;
+        return -1;
+      }),
+    );
+    setSortName(!sortName);
   };
   const sortdatadown = () => {
     setFilterData(
@@ -55,6 +79,7 @@ const Main = () => {
         return 1;
       }),
     );
+    setSortPrice(!sortPrice);
   };
   useEffect(() => {}, [filterData]);
   return (

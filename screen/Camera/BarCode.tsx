@@ -40,7 +40,12 @@ const BarCode = () => {
         onPress={openCamera}>
         <Text style={{color: 'white', fontSize: 20}}>Open Camera</Text>
       </TouchableOpacity>
-      <Text>{barcode}</Text>
+      <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
+        {'barcode'}
+      </Text>
+      <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
+        {barcode}
+      </Text>
     </View>
   );
 };

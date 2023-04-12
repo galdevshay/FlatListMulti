@@ -4,12 +4,13 @@ import Item from './Item';
 import {ItemData} from './types';
 import Header from './Header';
 import Footer from './Footer';
+import {DATA} from './Mock';
 type MainProps = {
   dataa: ItemData[];
 };
 
-const Main = (props: MainProps) => {
-  const [data, setData] = useState<ItemData[]>(props.dataa);
+const FlatListMemo = () => {
+  const [data, setData] = useState<ItemData[]>(DATA);
   const change = useCallback((index: number) => {
     data[index].select = !data[index].select;
     setData([...data]);
@@ -52,4 +53,4 @@ const Main = (props: MainProps) => {
     </>
   );
 };
-export default Main;
+export default FlatListMemo;

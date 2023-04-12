@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Animated,
-  Button,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {StatusBar, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {ItemData} from './types';
 import CheckBox from '@react-native-community/checkbox';
 type ItemProps = {

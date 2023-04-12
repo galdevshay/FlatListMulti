@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Animated,
-  Button,
   Image,
   StatusBar,
   StyleSheet,
@@ -9,14 +7,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {Chain, Datum} from './types';
+import {Datum} from './types';
 import {ITEM_HEIGHT} from './Main';
 type ItemProps = {
   item: Datum;
 };
 
 const Item = React.memo(({item}: ItemProps) => {
-  console.log('render' + item.id);
   return (
     <TouchableOpacity style={styles.item}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
