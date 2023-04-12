@@ -38,17 +38,14 @@ public class CameraActivity extends AppCompatActivity {
         reactNativeHost=application.getReactNativeHost();
         reactInstanceManager=reactNativeHost.getReactInstanceManager();
         reactApplicationContext=(ReactApplicationContext)reactInstanceManager.getCurrentReactContext();
-        cmdEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                WritableMap writableMap=Arguments.createMap();
-                writableMap.putString("BarCode",editTextTextPersonName.getText().toString());
-                sendBarcode(reactApplicationContext,"BarCode",writableMap);
-                finish();
+        cmdEvent.setOnClickListener(v -> {
+            WritableMap writableMap=Arguments.createMap();
+            writableMap.putString("BarCode",editTextTextPersonName.getText().toString());
+            sendBarcode(reactApplicationContext,"BarCode",writableMap);
+            finish();
 
 
 
-            }
         });
     }
 }

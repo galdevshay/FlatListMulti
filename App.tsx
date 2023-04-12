@@ -1,23 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  NativeModules,
-  NativeEventEmitter,
-  Text,
-  TouchableOpacity,
-  DeviceEventEmitter,
-} from 'react-native';
-import {ItemData} from './screen/MultiFlat/types';
-import Main from './screen/Chain/Main';
-
+import React from 'react';
+import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import BarCode from './screen/Camera/BarCode';
 const App = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Main />
-    </SafeAreaView>
-  );
+  return <BarCode />;
 };
 
 const styles = StyleSheet.create({
