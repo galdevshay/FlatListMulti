@@ -1,5 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  NativeModules,
+  NativeEventEmitter,
+  Text,
+  TouchableOpacity,
+  DeviceEventEmitter,
+} from 'react-native';
 import {ItemData} from './screen/MultiFlat/types';
 import Main from './screen/Chain/Main';
 
